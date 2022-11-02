@@ -18,7 +18,7 @@ qt_add_executable(qt6-sens-app
 qt_add_qml_module(qt6-sens-app
     URI qt6sens
     VERSION 1.0
-    QML_FILES main.qml 
+    QML_FILES main.qml
 )
 
 target_link_libraries(qt6-sens-app

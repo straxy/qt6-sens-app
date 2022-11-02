@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     QQuickView view;
     Manager& manager = Manager::getInstance();
-    view.setSource(QUrl::fromLocalFile("qt6sens/main.qml"));
+    view.setSource(QUrl("qrc:/qt6sens/main.qml"));
     view.setFlags(Qt::FramelessWindowHint);
     QObject *item = reinterpret_cast<QObject *>(view.rootObject());
 

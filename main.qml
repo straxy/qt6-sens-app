@@ -4,8 +4,8 @@ import QtCharts
 import QtQuick.Layouts
 
 Item {
-    width: 800
-    height: 600
+    width: 1024
+    height: 768
     visible: true
     id: item
 
@@ -20,7 +20,7 @@ Item {
 
     function newI2CSensValue(val: int) {
         console.log("New I2C sensor value " + val)
-        temperatureChart.append(val)
+        temperatureChart.append(val / 2.)
     }
 
     Column {
@@ -61,7 +61,7 @@ Item {
                     ListElement { text: "normal" }
                     ListElement { text: "fast" }
                 }
-                width: 90
+                width: 120
                 anchors.verticalCenter: parent.verticalCenter
                 onActivated: item.setSamplingSpeed(cbItems.get(currentIndex).text)
             }
