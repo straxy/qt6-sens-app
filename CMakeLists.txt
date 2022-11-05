@@ -7,18 +7,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 6.2 COMPONENTS Quick Widgets REQUIRED)
 
-qt_add_executable(qt6-sens-app
-    main.cpp
-    manager.h manager.cpp
-    sysfsattr.h sysfsattr.cpp
-    poller.h poller.cpp
-    i2chandler.h i2chandler.cpp
+file(GLOB SOURCES "src/*.cpp")
+
+qt_add_executable(qt6-sens-app ${SOURCES})
+
+set_source_files_properties(qml/main.qml PROPERTIES
+    QT_RESOURCE_ALIAS main.qml
 )
 
 qt_add_qml_module(qt6-sens-app
     URI qt6sens
     VERSION 1.0
-    QML_FILES main.qml
+    QML_FILES qml/main.qml
 )
 
 target_link_libraries(qt6-sens-app
