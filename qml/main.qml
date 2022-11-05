@@ -118,7 +118,7 @@ Item {
             function init() {
                 temperatureChart.removeAllSeries()
                 xAxis.min = new Date(1970, 0, 1, 0, 0, 0)
-                xAxis.max = new Date(1970, 0, 1, 0, 0, 10)
+                xAxis.max = new Date(1970, 0, 1, 0, 0, 9)
                 temperatureChart.series = temperatureChart.createSeries(ChartView.SeriesTypeLine, "temperature", xAxis, yAxis)
             }
 
